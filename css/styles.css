@@ -1,12 +1,60 @@
-/* Ce fichier CSS reset est utilisé : https://schnaps.it/archive/css/reset.css */
+/* CSS Organisé avec la convention SMACCS... enfin... j'ai essayé*/
+
+
+/* || Base */
 
 body{
-    display: grid;
-    grid-template-rows: repeat(2, auto);
-    grid-template-columns: 200px 1fr;
-    grid-template-areas: "header header" "nav article" "footer footer";
-    font-family: 'Source Sans Pro', sans-serif;
-    background-color: rgba(237, 235, 235, 0.87);
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: rgba(237, 235, 235, 0.87);
+}
+
+/* || Layout */
+
+.l-main{
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-areas: "header header header" "nav article sidebar" "footer footer footer";
+}
+
+.l-article{
+  display: grid;
+  grid-template-rows: 1fr auto 2fr;
+  padding: 8px;
+}
+
+.l-comment-form div{
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  grid-gap: 10px;
+  padding: 4px;
+}
+
+/* || Modules */
+
+.articles-title a{
+  text-decoration: none;
+  color: black;
+}
+.content-container{
+  padding: 8px;
+}
+
+.input-pseudo, .input-comment{
+  border-radius: 3px;
+}
+
+.comment-form button{
+  border-radius: 3px;
+  padding: 15px;
+  padding-right: 30px;
+  padding-left: 30px;
+  cursor: pointer;
+
+}
+
+.comment-form button:hover{
+  background-color:burlywood;
 }
 
 header{
@@ -15,8 +63,13 @@ header{
   padding: 16px;
 
 }
+.sidebar{
+  grid-area: sidebar;
+  background-color: lightgray;
+}
 
-header h1{
+header h1 a{
+  text-decoration: none;
   color: aliceblue;
 }
 
@@ -29,7 +82,7 @@ nav ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 200px;
+  width: 1fr;
 }
 
 nav li{
@@ -52,18 +105,23 @@ article img{
   max-height: 500px;
 }
 
+
 footer{
   grid-area: footer;
 }
 
+
+/* || State */
+
+
 @media (max-width: 640px){
-  body{
-    grid-template-areas: "header" "article" "nav" "footer";
+  .main{
+    grid-template-areas: "header" "article" "nav" "sidebar" "footer";
     grid-template-columns: 1fr;
     font-family: 'Source Sans Pro', sans-serif;
     background-color: rgba(237, 235, 235, 0.87);
   }
-  nav > ul{
-    width: 100%;
-  }
 }
+
+
+/* || State */

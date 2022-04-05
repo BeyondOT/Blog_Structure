@@ -10,9 +10,10 @@ class Router
     {
         try 
         {
+            
             // Chargement automatique des classes du dossier models
             spl_autoload_register(function($class){
-                require_once('./src/models/'.$class.'.php');
+                require_once("./src/models/".$class.".php");
             });
             // On crée une variable url
             $url = '';
@@ -20,7 +21,7 @@ class Router
             //On va détéerminer le controleur en fct de $url
 
             if(isset($_GET['url'])){
-                
+
                 // On décompose l'url et on lui applique un fitre
                 $url = explode('/', filter_var($_GET['url'], FILTER_SANITIZE_URL));
   

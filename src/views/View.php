@@ -40,4 +40,15 @@ class View
         }
 
     }
+
+    public function generateArticle($data){
+        //définir le contenu à envoyer
+        $content = $this->generateFile($this->_file, $data);
+    
+        //template
+        $view = $this->generateFile('./src/views/template.php', array('t' => $this->_t, 'content' => $content));
+        echo $view;
+      }
+
+
 }
