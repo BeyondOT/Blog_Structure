@@ -8,22 +8,29 @@
 </head>
 <body>
   <div class="l-main main">
-    <header class="header" role="banner">
-        <h1 class="main-home"><a href="accueil">My Blog</a></h1>
+
+  <!-- HEADER ---------------------------------------- :  -->
+    <header class="header" role="banner">  
+        <nav class="navigation">
+            <label class="logo">My Blog</label>
+            <ul class="navigation-list">
+                <li class="navigation-item"><a class="navigation-link" href="accueil">Home</a></li>
+                <li class="navigation-item"><a class="navigation-link" href="#">About</a></li>
+                <li class="navigation-item"><a class="navigation-link" href="#">Articles</a></li>
+                <li class="navigation-item"><a class="navigation-link" href="#">Login</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
     </header>
-    <nav class="navigation">
-        <ul class="navigation-list">
-        <li class="navigation-item"><a class="navigation-link" href="#">Home</a></li>
-        <li class="navigation-item"><a class="navigation-link" href="#">Melfor</a></li>
-        <li class="navigation-item"><a class="navigation-link" href="#">Carola</a></li>
-        <li class="navigation-item"><a class="navigation-link" href="#">Kuglof</a></li>
-        <li class="navigation-item"><a class="navigation-link" href="#">Wurscht</a></li>
-        </ul>
-    </nav>
 
-    <div class="sidebar">
+    <div class="sidebar_left"></div>
 
-    </div>
+    <div class="sidebar_right"></div>
+
 
 	
 	<div class="content-container">
@@ -36,9 +43,10 @@
     <footer class="footer" role="contentinfo">
         2022. This is a footer
     </footer>
-	<script src="../../js/script.js"></script>
   </div>
-  
+
+  <script src="../../../Projet/js/script.js"></script> 
+
 </body>
 
 </html>
