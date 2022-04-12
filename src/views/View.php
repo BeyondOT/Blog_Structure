@@ -10,6 +10,7 @@ class View
         $this->_file = './src/views/view'.$action.'.php';
     }
 
+
     // Genere et affiche la vue 
     public function generate($data)
     {
@@ -48,7 +49,7 @@ class View
         //template
         $view = $this->generateFile('./src/views/template.php', array('t' => $this->_t, 'content' => $content));
         echo $view;
-      }
+    }
 
 
 }

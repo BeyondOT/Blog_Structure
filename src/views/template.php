@@ -17,7 +17,13 @@
                 <li class="navigation-item"><a class="navigation-link" href="accueil">Home</a></li>
                 <li class="navigation-item"><a class="navigation-link" href="#">About</a></li>
                 <li class="navigation-item"><a class="navigation-link" href="#">Articles</a></li>
-                <li class="navigation-item"><a class="navigation-link" href="#">Login</a></li>
+                <li class="navigation-item">
+                    <?php if(isset($_SESSION['user_id'])) : ?>
+                        <a class="navigation-link auth-link" href="users&auth=logout">Log out</a>
+                    <?php else :?>
+                        <a class="navigation-link auth-link" href="users&auth=login">Login</a>
+                    <?php endif;?>
+                </li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>

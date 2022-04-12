@@ -16,6 +16,7 @@ class ControllerAccueil
         }
     }
 
+
     private function articles()
     {
         $this->_articleManager = new ArticleManager();

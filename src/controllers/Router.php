@@ -8,9 +8,10 @@ class Router
     
     public function routeReq()
     {
+        //TODO: Rename files and group them properly
+
         try 
-        {
-            
+        {        
             // Chargement automatique des classes du dossier models
             spl_autoload_register(function($class){
                 require_once("./src/models/".$class.".php");
