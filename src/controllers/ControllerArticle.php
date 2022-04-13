@@ -60,7 +60,7 @@ class ControllerArticle
         if(isset($_GET['id'])){
 
             $article = $this->_articleManager->getArticle($_GET['id']);
-            $comments = $this->_commentManager->getCommentsById($_GET['id']);
+            $comments = $this->_commentManager->getCommentsByArticleId($_GET['id']);
         
             $this->_view = new View('Article');
             $this->_view->generate(array('article' => $article, 'comments' => $comments, 'data' =>  $data));

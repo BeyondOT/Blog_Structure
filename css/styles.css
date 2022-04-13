@@ -21,6 +21,7 @@ h1,
 h2,
 h3{
   padding-bottom: 20px;
+
 }
 
 
@@ -230,6 +231,12 @@ label.logo{
     display: flex;
     flex-direction: column;
   }
+}
+
+.deleted-comment{
+  transform: translateX(0%);
+  transition: transform 0.5s ease-out;
+  display: none;
 }
 
 /* || Sidebars :--------------------------------------------------*/

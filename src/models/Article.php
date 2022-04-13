@@ -11,8 +11,7 @@ class Article
     public function __construct(array $data){
         $this->hydrate($data);
     }
-    
-    
+
     // Hydratation
     // Pour chaque colonne du tableau de la bdd ($key) 
     // Appel son setter

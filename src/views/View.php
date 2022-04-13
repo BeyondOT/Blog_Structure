@@ -17,7 +17,11 @@ class View
         $content = $this->generateFile($this->_file, $data);
 
         // Template (contient les elements communs)
-        $view = $this->generateFile('./src/views/template.php', array('t' => $this->_t, 'content' => $content));
+        if(isLoggedIn()){
+            $view = $this->generateFile('./src/views/templates/templateLoggedIn.php', array('t' => $this->_t, 'content' => $content));
+        }else{
+            $view = $this->generateFile('./src/views/templates/template.php', array('t' => $this->_t, 'content' => $content));
+        }
         echo $view;
     }
 

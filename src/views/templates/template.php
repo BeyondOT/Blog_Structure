@@ -18,11 +18,7 @@
                 <li class="navigation-item"><a class="navigation-link" href="#">About</a></li>
                 <li class="navigation-item"><a class="navigation-link" href="#">Articles</a></li>
                 <li class="navigation-item">
-                    <?php if(isLoggedIn()) : ?>
-                        <a class="navigation-link auth-link" href="users&auth=logout">Log out</a>
-                    <?php else :?>
-                        <a class="navigation-link auth-link" href="users&auth=login">Login</a>
-                    <?php endif;?>
+                    <a class="navigation-link auth-link" href="users&auth=login">Login</a>
                 </li>
             </ul>
             <div class="burger">
@@ -51,7 +47,7 @@
     </footer>
   </div>
 
-  <script src="../../../Projet/js/script.js"></script> 
+  <script type="module" src="../../../Projet/js/script.js"></script> 
 
 </body>
 
