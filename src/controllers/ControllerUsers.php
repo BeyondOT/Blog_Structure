@@ -55,7 +55,6 @@ class ControllerUsers
             }
 
             // Check s'il n'y a aucune erreur
-            // [x]: completer cette fonction pour le login
             if(empty($data['usernameError']) && empty($data['passwordError'])){
                 // Essayer de se connecter
                 $loggedIn = $this->_userManager->login($this->_user->username(), $this->_user->password());
@@ -77,7 +76,6 @@ class ControllerUsers
         $this->_view->generate(array('data' => $data));
     }
 
-    // TODO: Changer la langue des commentaires et des messages pour l'utilisateur
     private function register()
     {   
         $this->_userManager = new UserManager();

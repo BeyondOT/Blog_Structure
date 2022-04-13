@@ -1,3 +1,4 @@
+<?php $this->_t = 'Register'?>
 <div class="container-login">
     <div class="wrapper-login">
         <h2>Register</h2>

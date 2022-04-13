@@ -10,7 +10,6 @@ class View
         $this->_file = './src/views/view'.$action.'.php';
     }
 
-
     // Genere et affiche la vue 
     public function generate($data)
     {
@@ -39,17 +38,6 @@ class View
         }else{
             throw new \Exception('Fichier '.$file.' introuvable', 1);
         }
-
     }
-
-    public function generateArticle($data){
-        //définir le contenu à envoyer
-        $content = $this->generateFile($this->_file, $data);
-    
-        //template
-        $view = $this->generateFile('./src/views/template.php', array('t' => $this->_t, 'content' => $content));
-        echo $view;
-    }
-
 
 }

@@ -52,7 +52,7 @@ class Model
         $req->closeCursor();
     }
 
-    protected function getOne($table, $obj, $id){
+    protected function getAllById($table, $obj, $id){
         $this->getBdd();
         $var = [];
         $req = $this->_bdd->prepare('SELECT * FROM '.$table.' WHERE id = ?');

@@ -1,4 +1,4 @@
-
+<?php $this->_t = 'Login'?>
 <div class="container-login">
     <div class="wrapper-login">
         <h2>Sign in</h2>
