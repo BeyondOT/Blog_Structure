@@ -3,12 +3,12 @@
 class Comment
 {
 
-    private $_id;
-    private $_articleId;
-    private $_author;
-    private $_content;
-    private $_date;
-    private $_isVerified;
+    protected $_id;
+    protected $_articleId;
+    protected $_author;
+    protected $_content;
+    protected $_date;
+    protected $_isVerified;
 
     public function __construct(array $data){
         $this->hydrate($data);

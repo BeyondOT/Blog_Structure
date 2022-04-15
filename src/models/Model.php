@@ -2,8 +2,6 @@
 
 class Model
 {
-    // TODO: Clean up the Model Class
-    
     protected $_bdd;
     // Connection à la base de données
     private function setBdd(){
@@ -19,6 +17,21 @@ class Model
             $this->setBdd();
             return $this->_bdd;
         }
+    }
+
+    protected function queryObjectsNoOptions($query ,$obj){
+        $this->getBdd(); 
+        $var = [];
+        $req = $this->_bdd->prepare($query);
+        $req->execute();
+
+        // Variable data qui va contenir les données
+        while($data = $req->fetch(PDO::FETCH_ASSOC)){
+            // var contient les données sous forme d'objets
+            $var[] = new $obj($data);
+        }
+        return $var;
+        $req->closeCursor();
     }
 
     protected function queryObjects($query, $options ,$obj){

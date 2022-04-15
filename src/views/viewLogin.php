@@ -4,7 +4,7 @@
         <h2>Sign in</h2>
 
         <form action="users&auth=login" method="POST">
-            <input type="text" placeholder="Username *" name="username">
+            <input type="text" placeholder="Username *" name="username" value="<?php if(isset($_POST['username']))echo $_POST['username']?>">
             <span class="invalidFeedback">
                 <?php echo $data['usernameError']?>
             </span>

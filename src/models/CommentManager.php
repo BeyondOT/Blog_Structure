@@ -3,15 +3,20 @@
 class CommentManager extends Model
 {
     // methode qui recupere les articles dans la bdd
+    
+    public function getAllComments()
+    {
+        return $this->queryObjectsNoOptions('SELECT * FROM comments WHERE ORDER BY date asc', 'Comment');
+    }
 
     public function getPendingComments()
     {
-        return $this->queryObjects('SELECT * FROM comments WHERE isVerified = 0 ORDER BY date asc', [], 'Comment');
+        return $this->queryObjectsNoOptions('SELECT * FROM comments WHERE isVerified = 0 ORDER BY date asc', 'Comment');
     }
 
     public function getVerifiedComments()
     {
-        return $this->queryObjects('SELECT * FROM comments WHERE isVerified = 1 ORDER BY date desc', [], 'Comment');
+        return $this->queryObjectsNoOptions('SELECT * FROM comments WHERE isVerified = 1 ORDER BY date desc', 'Comment');
     }
 
     public function getCommentById($id)
@@ -43,8 +48,7 @@ class CommentManager extends Model
 
     public function getCommentsByArticleId($id)
     {
-        //  TODO: afficher seuls les commentaires verifiés
-        return $this->queryObjects('SELECT * FROM comments WHERE articleId = ?', [$id], 'Comment');
+        return $this->queryObjects("SELECT * FROM comments WHERE articleId = ? AND isVerified = 1 ORDER BY date desc",[$id], 'Comment');
     }
 
     public function addCommentDb($articleId, $author, $comment){

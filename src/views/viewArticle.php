@@ -29,16 +29,31 @@
                     <?php echo $data['commentError']?>
                     </span>
                 </div>
-                <button type="submit">Envoyer</button>
+                <button class="submit-btn" type="submit">Envoyer</button>
             </form>
-
+        </div>
+        
+        <div class="comments-preview">
             <?php foreach($comments as $comment): ?>
-            <div class="comment">
-                <h3><?= $comment->author()?></h3>
-                <p><?= $comment->content()?></p>
+            <div class="single-comment" id="<?= $comment->id()?>">
+                <h4><?= $comment->author()?></h4>
+                <p><?= nl2br($comment->content())?></p>
+                <?php if(isLoggedIn()):?>
+                <div class="row">
+                    <a class="reply-btn" id="<?= $comment->id()?>" href="comments&reply=<?= $comment->id()?>" page="article&id=<?=$article[0]->id()?>"><i class="fa-solid fa-reply"></i> Répondre</a>
+                    <a class="delete-comment" id="<?= $comment->id()?>" href="comments&delete=<?= $comment->id()?>"><i class="fa-solid fa-trash-can"></i> Supprimer</a>   
+                </div>
+                <?php endif;?>
+                <?php foreach($replies as $reply):?>
+                    <?php if($reply->commentId() == $comment->id()):?>
+                    <div class="single-comment">
+                        <h4><?= $reply->author()?></h4>
+                        <p><?= nl2br($reply->content())?></p>
+                    </div>
+                    <?php endif;?>
+                <?php endforeach;?>
             </div>
             <?php endforeach; ?>
-
         </div>
     </div>
 </div>

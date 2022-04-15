@@ -5,6 +5,7 @@ import * as ajax from './ajax.js';
 
 const app = () =>{
     navBar.navSlide();
+    ajax.addReplyForm();
     ajax.deleteComment();
 }
 

@@ -47,8 +47,7 @@ class Router
                 }
                 
             }else{
-                require_once('./src/controllers/ControllerAccueil.php');
-                $this->_ctrl = new ControllerAccueil($url);
+                header('location: accueil');
             }
             
 

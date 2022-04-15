@@ -8,45 +8,22 @@
 </head>
 <body>
   <div class="l-main main">
-
   <!-- HEADER ---------------------------------------- :  -->
-    <header class="header" role="banner">  
-        <nav class="navigation">
-            <label class="logo">My Blog</label>
-            <ul class="navigation-list">
-                <li class="navigation-item"><a class="navigation-link" href="accueil">Home</a></li>
-                <li class="navigation-item"><a class="navigation-link" href="#">About</a></li>
-                <li class="navigation-item"><a class="navigation-link" href="#">Articles</a></li>
-                <li class="navigation-item">
-                    <a class="navigation-link auth-link" href="users&auth=login">Login</a>
-                </li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </nav>
-    </header>
+    <?php require_once './src/views/includes/header.php'?>
 
-    <div class="sidebar_left"></div>
-
-    <div class="sidebar_right"></div>
-
-
-	
+	<!-- MAIN : -----------------------------------------:   -->
 	<div class="content-container">
 
 		<?= $content ?>
 
 	</div>
-
-             
+            
     <footer class="footer" role="contentinfo">
         2022. This is a footer
     </footer>
   </div>
 
+  <script src="https://kit.fontawesome.com/5107ed0a12.js" crossorigin="anonymous"></script>
   <script type="module" src="../../../Projet/js/script.js"></script> 
 
 </body>

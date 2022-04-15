@@ -1,0 +1,144 @@
+/* HEADER : ------------------------------------ */
+header{
+  grid-area: header;
+  min-height: 8vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation{
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: rgba(0, 0, 0);
+}
+
+label.logo{
+  color: white;
+  font-size: 35px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.navigation-list{
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
+}
+
+.navigation-link.active, .navigation-link:hover {
+  background: white;
+  color: black;
+  transition: .5s;
+}
+.navigation-link{
+  margin: 0 10px;
+  white-space: nowrap;
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.auth-link{
+  border: 2px solid white;
+}
+
+.burger{
+  display: none;
+  cursor: pointer;
+}
+
+.burger div{
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+}
+
+.main-image{
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+  opacity: 0.4;
+}
+.container{
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.centered{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,50%);
+}
+
+@media screen and (max-width:1024px){
+  .l-main{
+    grid-template-columns: 1fr 5fr 1fr;
+  }
+  .navigation-list{
+    width: 45%;
+  }
+}
+
+@media screen and (max-width:768px){ 
+  body{
+    overflow-x: hidden;
+  }
+
+  .l-main{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navigation-list{
+    opacity: 1;
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 0%;
+    transition: all 0.5s ease-in;
+  }
+  
+  .navigation-item{
+    opacity: 0;
+  }
+
+  .burger{
+    display: block;
+  }
+  .navigation-active{
+    width: 50%;
+    background-color: rgba(0, 0, 0);
+    transition: all 0.5s ease-in;
+  }
+  
+}
+
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}

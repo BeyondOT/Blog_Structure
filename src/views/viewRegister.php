@@ -4,12 +4,12 @@
         <h2>Register</h2>
 
         <form action="users&auth=register" method="POST">
-            <input type="text" placeholder="Username *" name="username">
+            <input type="text" placeholder="Username *" name="username" value="<?php if(isset($_POST['username']))echo $_POST['username']?>">
             <span class="invalidFeedback">
                 <?php echo $data['usernameError']?>
             </span>
 
-            <input type="text" placeholder="E-mail *" name="email">
+            <input type="text" placeholder="E-mail *" name="email" value="<?php if(isset($_POST['email']))echo $_POST['email']?>">
             <span class="invalidFeedback">
                 <?php echo $data['emailError']?>
             </span>

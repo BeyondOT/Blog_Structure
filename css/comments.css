@@ -1,0 +1,164 @@
+/* || Comment Section :--------------------------------------------------*/
+
+.l-comment-form{
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  padding: 4px;
+}
+.comment-form label{
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-align: left;
+  justify-content: left;
+  display: block;
+}
+
+.input-pseudo, .input-comment{
+  border: 1px solid black;
+  padding: 10px;
+  outline: none;
+  border-radius: 3px;
+  margin: 10px 0;
+}
+
+.input-pseudo{
+  width: 60%;
+  display: block;
+}
+
+.input-comment{
+  width: 100%;
+  resize: none;
+  height: 15vh;
+}
+.comment-section{
+  margin: 20px 0;
+}
+
+.submit-btn{
+  margin: 10px 0;
+  padding: .7rem 2rem;
+  opacity: .8;
+  color: #FFF;
+  background: black;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: .3s ease-in;
+
+}
+
+.submit-btn:hover{
+  opacity: 1;
+}
+
+.comments-preview {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.single-comment{
+  background: #FFF;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  padding: 10px 20px;
+  text-align: left;
+  margin-bottom: 25px;
+  max-width: 75ch;
+}
+
+.single-comment h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.single-comment h5{
+  margin-bottom: 15px;
+}
+
+.single-comment a {
+  margin: 10px 0;
+  border-radius: 3px;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.single-comment p {
+  font-size: .9rem;
+  color: #111;
+}
+
+.single-comment .row{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  text-align: center;
+}
+
+.admin-comments-container{
+  display: grid;
+  grid-template-rows: auto;
+  padding: 16px;
+  justify-content: center;
+}
+
+@media screen and (max-width:768px){
+  .l-comment-form{
+    display: flex;
+    flex-direction: column;
+  }
+}
+.deleted-comment{
+  transition: .5s;
+}
+
+
+.delete-comment{
+  color: red;
+
+}
+
+.delete-comment:hover, .delete-comment:active{
+  color: white;
+  background-color: red;
+  transition: .5s;
+}
+
+.approve-comment{
+  color: green;
+}
+
+.approve-comment:hover, .approve-comment:active{
+  color: white;
+  background-color: green;
+  transition: .5s;
+}
+
+.reply-btn{
+  color: black;
+}
+
+.reply-btn:hover, .reply-btn:active{
+  color: white;
+  background-color: black;
+  transition: .5s;
+}
+
+.reply-form{
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-gap: 10px;
+  justify-content: center;
+}
+
+.reply-input{
+  max-height: 5vh;
+  margin: 10px 0;
+}
+
+/* || Icons :--------------------------------------------------*/
+

@@ -1,4 +1,12 @@
 <?php
+
+    function getView(){
+        if(isset($_GET['url'])){
+            return $_GET['url'];
+        }else{
+            return false;
+        }
+    }
     // Start la session
     session_start();
 
