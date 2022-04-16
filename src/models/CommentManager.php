@@ -51,6 +51,41 @@ class CommentManager extends Model
         return $this->queryObjects("SELECT * FROM comments WHERE articleId = ? AND isVerified = 1 ORDER BY date desc",[$id], 'Comment');
     }
 
+    public function addComment($data){
+        $_POST = filter_input_array(INPUT_POST,FILTER_UNSAFE_RAW);
+            $comment = new Comment([
+                'author' => trim($_POST['pseudo']),
+                'content' => trim($_POST['comment']),
+                'articleId' => $_GET['id']]);
+
+            /* Validation de l'auteur du commentaire */
+            $pseudoValidation = "/^[a-zA-Z0-9]*$/";
+            // Check si vide
+            if(empty($comment->author())){
+                $data['authorError'] = 'Veuillez entrez un pseudo';
+            // S'assurer qu'il ne contient que des lettres et des chiffres
+            }elseif(!preg_match($pseudoValidation, $comment->author())){
+                $data['authorError'] = 'Le pseudo ne peut contenir que des lettres et des chiffres';
+            }
+
+            /* Validation du contenu du commentaire */
+            if(empty($comment->content())){
+                $data['commentError'] = 'Veuillez entrer votre commentaire';
+            }
+
+            /* Check si aucune erreur dans inputs */
+            if(empty($data['authorError']) && empty($data['commentError'])){
+                // Ajouter le commentaire
+                if(!$this->addCommentDb($comment->articleId(), $comment->author(), $comment->content())){
+                    die('Something went wrong while inserting comment in db');
+                }
+                return $data;
+            }else{
+                $data['hasError'] = 'true';
+                return $data;
+            }
+    }
+    
     public function addCommentDb($articleId, $author, $comment){
         $this->getBdd();
         $req = $this->_bdd->prepare('INSERT INTO comments (articleId, author, content, date) VALUES (?, ?, ?, ?)');

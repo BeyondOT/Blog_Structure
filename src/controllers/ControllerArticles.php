@@ -1,5 +1,4 @@
 <?php
-require_once './src/views/View.php';
 
 class ControllerArticles
 {

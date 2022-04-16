@@ -1,11 +1,12 @@
 <?php
-require_once './src/views/View.php';
 
 class ControllerUsers
 {
     private $_user;
     private $_userManager;
     private $_view;
+
+    // TODO: Clean up en factorisant les fonctions
 
     public function __construct($url)
     { 
@@ -181,5 +182,5 @@ class ControllerUsers
         header('location: accueil');
     }
         
-
 }
+

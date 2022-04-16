@@ -1,11 +1,12 @@
 <?php
-require_once './src/views/View.php';
 
 class ControllerComments
 {
     private $_commentsManager;
     private $_repliesManager;
     private $_view;
+
+    // TODO: Ajouter erreur si essaye d'acceder a cette page sans être connécté
 
     public function __construct()
     {

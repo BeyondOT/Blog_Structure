@@ -40,7 +40,7 @@ export function deleteComment(){
     function changeContent() {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
             if (httpRequest.status === 200) {
-                var comment = document.querySelector("#"+CSS.escape(linkId)+".admin-comment-wrapper");
+                var comment = document.querySelector("#"+CSS.escape(linkId)+".single-comment");
                 comment.remove();
         
             } else {
