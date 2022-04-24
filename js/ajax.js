@@ -20,29 +20,28 @@ export function deleteComment(){
         var link = links[i];
         link.onclick = function(e){
             e.preventDefault();
-            if(confirm("Are you sure you want to delete this comment ?") == false){
-                return;
-            }else{
-                linkId = this.id;
-                httpRequest = getHttpRequest();
-    
-                // Check si HttpRequest a bien ete initialisé
-                if (!httpRequest) {
-                    alert('Abandon :( Impossible de créer une instance de XMLHTTP');
-                    return false;
-                }
-                httpRequest.onreadystatechange = changeContent;
-                httpRequest.open('GET', this.getAttribute('href'),true);
-                httpRequest.send();                
+            linkId = this.id;
+            httpRequest = getHttpRequest();
+
+            // Check si HttpRequest a bien ete initialisé
+            if (!httpRequest) {
+                alert('Abandon :( Impossible de créer une instance de XMLHTTP');
+                return false;
             }
+            httpRequest.onreadystatechange = changeContent;
+            httpRequest.open('GET', this.getAttribute('href'),true);
+            httpRequest.send();                  
         } 
     }
     function changeContent() {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
             if (httpRequest.status === 200) {
                 var comment = document.querySelector("#"+CSS.escape(linkId)+".single-comment");
-                comment.remove();
-        
+                comment.classList.add("deleted-comment");
+                comment.addEventListener('animationend', () => {
+                    comment.remove();
+                }, {once: true})
+                
             } else {
                 alert('Un problème est survenu avec la requête.');
             }

@@ -14,7 +14,7 @@
                 <?php echo $data['passwordError']?>
             </span>
             
-            <button class="button" id="submit" type="submit" value="submit">Login</button>
+            <button class="submit-btn" id="submit" type="submit" value="submit">Login</button>
 
             <p class="options">Not Registered yet ?<a href="users&auth=register"> Create an account !</a></p>
         </form>

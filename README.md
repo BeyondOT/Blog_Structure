@@ -5,6 +5,8 @@
 Ceci est mon projet de blog pour le module de "Programmation Web 2". J'ai eu un énorme plaisir à travailler sur ce projet.
 Durant ce projet j'ai appris beaucoup de nouvelles choses et de nouvelles manières d'organiser mon code. Il faut croire que développer un site web en utilisant la structure MVC et la programmation orienté objet a été un clic pour moi car ça m'a permit de modularisier mon code, ce qui rend le code plus organisé et plus agréable à travailler dessus. 
 
+Malheureusement, je n'ai pas eu le temps de tout finir comme je le veux, mais j'ai essayé de "Futur Proof" ce que j'ai pu car j'ai envie de continuer ce projet et d'en faire un vrai Blog ou le transformer en Portfolio. C'est d'ailleurs pour cette raison que des parties mon code sont plus complexes.
+
 # Organisation 
 
 ## Structure de code :
@@ -12,8 +14,7 @@ Ce projet est organisé en utilisant la structure MVC.
 Voici une explication de comment fonctionne mon site Web.
 
 ## Fonctionnement du site web :
-<!-- TODO: INSERER LIEN SITE WEB -->
-Lorsqu'on se rend sur le site <!-- INSERER LIEN ICI -->, on est redirigé directement vers la page d'accueil. Cela est fait grâce à:
+Lorsqu'on se rend sur le site https://blogwebproject.000webhostapp.com/accueil, on est redirigé directement vers la page d'accueil. Cela est fait grâce à:
 
 ### [Router.php](https://git.unistra.fr/chemaouelfihri/projet-web-2/-/tree/main/src/libraries)
 Le Router s'occupe de la lecture du lien de le découper, l'analyser et d'appeler le controller nécessaire.
@@ -21,6 +22,7 @@ Si la page demandé n'existe pas le renvoie que la page est introuvable.
 
 ### [Les Controllers](https://git.unistra.fr/chemaouelfihri/projet-web-2/-/tree/main/src/controllers):
 Les controllers s'occupent d'analyser la requête de l'utilisateur sur la page concérné puis de générer la vue approprié. Par exemple si l'utilisateur veut juste accéder à la page concérné alors le controller va appeller la méthode qui permet de générer la vue. 
+
 Dans le cas ou il souhaite effectuer une action sur la page alors le controller va appeler la méthode qui va permettre d'executer cette action puis le rediriger vers la page ou il était. Et vu que la redirection à été faite alors le controller considere que l'utilisateur veut juste voir la page alors il génére la vue.
 
 ### [Model.php](https://git.unistra.fr/chemaouelfihri/projet-web-2/-/tree/main/src/libraries)

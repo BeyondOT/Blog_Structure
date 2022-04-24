@@ -64,6 +64,7 @@ class ControllerUsers
                 if($loggedIn) {
                     $this->_user = $loggedIn;
                     $this->createUserSession();
+                    header('location: comments');
 
                 // Sinon il y'a eu un problème lors de la connection
                 }else{

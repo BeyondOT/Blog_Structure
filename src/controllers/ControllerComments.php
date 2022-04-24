@@ -12,6 +12,8 @@ class ControllerComments
     {
         if(isset($url) && count($url) > 1){
             throw new \Exception("Page Introuvable", 1);       
+        }elseif(!isLoggedIn()){
+            header('location: users&auth=login');
         }elseif(isset($_GET['approve'])){
             $this->approve();
         }elseif(isset($_GET['delete'])){           

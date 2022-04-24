@@ -9,7 +9,7 @@ class ReplyManager extends Model{
     public function addReply(){
         $_POST = filter_input_array(INPUT_POST,FILTER_UNSAFE_RAW);
             $reply = new Reply([
-                'author' => 'achrafadmin',
+                'author' => $_SESSION['username'],
                 'content' => trim($_POST['reply']),
                 'commentId' => $_GET['reply']
             ]);

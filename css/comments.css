@@ -1,58 +1,10 @@
 /* || Comment Section :--------------------------------------------------*/
 
-.l-comment-form{
-  display: flex;
-  flex-direction: column;
-  margin: 20px 0;
-  padding: 4px;
-}
-.comment-form label{
-  font-weight: 600;
-  margin-bottom: 5px;
-  text-align: left;
-  justify-content: left;
-  display: block;
-}
 
-.input-pseudo, .input-comment{
-  border: 1px solid black;
-  padding: 10px;
-  outline: none;
-  border-radius: 3px;
-  margin: 10px 0;
-}
 
-.input-pseudo{
-  width: 60%;
-  display: block;
-}
 
-.input-comment{
-  width: 100%;
-  resize: none;
-  height: 15vh;
-}
 .comment-section{
   margin: 20px 0;
-}
-
-.submit-btn{
-  margin: 10px 0;
-  padding: .7rem 2rem;
-  opacity: .8;
-  color: #FFF;
-  background: black;
-  border: none;
-  outline: none;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: .3s ease-in;
-
-}
-
-.submit-btn:hover{
-  opacity: 1;
 }
 
 .comments-preview {
@@ -106,16 +58,9 @@
   justify-content: center;
 }
 
-@media screen and (max-width:768px){
-  .l-comment-form{
-    display: flex;
-    flex-direction: column;
-  }
-}
 .deleted-comment{
-  transition: .5s;
+  animation: fade-out 800ms forwards;
 }
-
 
 .delete-comment{
   color: red;
@@ -160,5 +105,23 @@
   margin: 10px 0;
 }
 
-/* || Icons :--------------------------------------------------*/
 
+/* || Media Queries :--------------------------------------------------*/
+
+@media screen and (max-width:768px){
+  .l-comment-form{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* || Animations :--------------------------------------------------*/
+
+@keyframes fade-out{
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

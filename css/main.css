@@ -35,3 +35,62 @@
   border-left: 1px solid rgb(141, 140, 140);
   border-right: 1px solid rgb(141, 140, 140);
 }
+
+/* || Cards :--------------------------------------------------*/
+
+.cards{
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 5rem;
+}
+
+.cards a{
+  color: black;
+}
+
+.card-image{
+  max-width: 100%;
+}
+
+.card-date{
+  margin: 15px 5px;
+  position: sticky;
+  top: 100%;
+}
+
+.card{
+  flex-shrink: 1;
+  flex-grow: 0;
+  width: 20%;
+  min-width: 300px;
+  align-self: stretch;
+
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}
+
+.card:hover{
+  background-color: black;
+  color: white;
+  transition: .5s;
+}
+
+
+.card-description{
+  max-height: 100px;
+  overflow: hidden;
+}
+
+@media screen and (max-width:768px){
+  .cards{
+    margin: 1rem 1rem;
+  }
+
+  .card{
+    width: 100%;
+  }
+}

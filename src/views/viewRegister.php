@@ -24,7 +24,7 @@
                 <?php echo $data['confirmPasswordError']?>
             </span>
             
-            <button id="submit" type="submit" value="submit">Register</button>
+            <button class="submit-btn" id="submit" type="submit" value="submit">Register</button>
 
             <p class="options">Already registered ?<a href="users&auth=login"> Sign in !</a></p>
         </form>

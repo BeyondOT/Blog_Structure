@@ -2,7 +2,6 @@
     <label class="logo">My Blog</label>
     <ul class="navigation-list">
         <li class="navigation-item"><a class="navigation-link" href="accueil">Home</a></li>
-        <li class="navigation-item"><a class="navigation-link" href="#">About</a></li>
         <li class="navigation-item"><a class="navigation-link" href="articles">Articles</a></li>
         <li class="navigation-item"><a class="navigation-link" href="comments">Commentaires</a></li>
         <li class="navigation-item">
