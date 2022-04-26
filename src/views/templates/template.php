@@ -25,7 +25,7 @@
   </div>
 
   <script src="https://kit.fontawesome.com/5107ed0a12.js" crossorigin="anonymous"></script>
-  <script type="module" src="../../../Projet/js/script.js"></script> 
+  <script type="module" src="js/script.js"></script> 
 
 </body>
 

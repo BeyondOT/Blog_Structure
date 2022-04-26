@@ -5,7 +5,7 @@ class Model
     protected $_bdd;
     // Connection à la base de données
     private function setBdd(){
-        $this->_bdd = new PDO('mysql:host=localhost;dbname=chemaouelfihri;charset=utf8', 'root', '');
+        $this->_bdd = new PDO('mysql:host=osr-mysql.unistra.fr;dbname=chemaouelfihri;charset=utf8', 'chemaouelfihri', 'achraf123456');
 
         // Utiliser les constantes de PDO pour gérer les erreurs 
         $this->_bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);

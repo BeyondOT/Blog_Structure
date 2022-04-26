@@ -3,3 +3,4 @@
 
 require_once 'viewArticles.php';
 ?>
+<!--  -->

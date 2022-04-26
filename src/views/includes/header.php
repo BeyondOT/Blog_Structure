@@ -9,7 +9,7 @@
     <?php 
     if(getView() == 'accueil'):?>
     <div class="container">
-        <img class="main-image" src="../../../../Projet/img/main_picture.jpg" alt="Italian Trulli">
+        <img class="main-image" src="img/main_picture.jpg" alt="Italian Trulli">
         <h1 class="centered home-title">Bienvenue sur mon Blog ! </h1>
     </div>
 
